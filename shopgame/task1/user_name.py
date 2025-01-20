@@ -1,0 +1,2 @@
+
+users = ['Sveta', 'Polina', 'Andrey']

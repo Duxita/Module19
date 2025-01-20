@@ -1,0 +1,12 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block pagename %}{{ title }}{% endblock %}
+
+{% block content %}
+<nav>
+    <p><h2><a href="{{ menu.platform }}">Главная</a></h2></p>
+    <p><h2><a href="{{ menu.games }}">Магазин</a></h2></p>
+    <h2><a href="{{ menu.cart }}">Корзина</a></h2>
+</nav>
+<p>{{ content }}</p>
+{% endblock %}

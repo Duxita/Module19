@@ -1,0 +1,16 @@
+{% extends 'fourth_task/menu.html' %}
+
+{% block pagename %}{{ title }}{% endblock %}
+
+{% block content %}
+<nav>
+    <p><h3><a href="{{ menu.platform }}">Главная</a></h3></p>
+    <p><h3><a href="{{ menu.games }}">Магазин</a></h3></p>
+    <h3><a href="{{ menu.cart }}">Корзина</a></h3>
+</nav>
+<ul>
+    {% for game in games %}
+    <li><H3>{{ game.title }} | {{ game.description }}. Стоимость: {{ game.cost }} <a href="{% url 'cart' %}">Купить</a></H3></li>
+    {% endfor %}
+</ul>
+{% endblock %}
