@@ -1,5 +1,7 @@
 from django.contrib import admin
-from .models import Game, Buyer
+from .models import Game, Buyer, News
+
+admin.site.register(News)
 
 @admin.register(Game)
 class GameAdmin(admin.ModelAdmin):

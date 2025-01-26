@@ -1,6 +1,23 @@
 from django.shortcuts import render
 from .forms import UserRegister
-from .models import Buyer, Game
+from .models import Buyer, Game, News
+from django.core.paginator import Paginator
+
+def news(request):
+    news_list = News.objects.all().order_by('-date')
+    paginator = Paginator(news_list, 5)
+    page_number = request.GET.get('page')
+    news = paginator.get_page(page_number)
+
+    context = {
+        'title': 'Новости',
+        'menu': {'platform': '/',
+                 'games': '/games/',
+                 'cart': '/cart/',
+                 'news': '/platform/news/'},
+        'news': news
+    }
+    return render(request, 'fourth_task/news.html', context)
 def platform(request):
     context = {
         'title': 'Игровая платформа',
