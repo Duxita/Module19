@@ -3,6 +3,7 @@ from django.urls import path
 from task1.views import platform, games, cart, sign_up_by_django, sign_up_by_html
 
 urlpatterns = [
+    path('admin/', admin.site.urls),
     path('', platform, name='platform'),
     path('games/', games, name='games'),
     path('cart/', cart, name='cart'),
